@@ -1,0 +1,42 @@
+{
+	"actorSpecification": 1,
+	"name": "apify-task",
+	"title": "Scrape products from imaginary e-commerce site",
+	"description": "Scrape data from single page with provided URL.",
+	"version": "0.0",
+	"meta": {
+		"templateId": "ts-start"
+	},
+	"input": "./input_schema.json",
+	"dockerfile": "./Dockerfile",
+	"storages": {
+        "dataset": {
+            "actorSpecification": 1,
+            "fields": {},
+            "views": {
+                "overview": {
+                    "title": "Overview",
+                    "transformation": {
+						"fields": [
+							"name",
+							"price"
+						]
+					},
+                    "display": {
+						"component": "table",
+						"properties": {
+							"name": {
+								"label": "Name",
+								"format": "text"
+							},
+							"link": {
+								"label": "price",
+								"format": "number"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

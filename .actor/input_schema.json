@@ -1,0 +1,25 @@
+{
+    "title": "Scrape data from a web page",
+    "type": "object",
+    "schemaVersion": 1,
+    "required": ["url", "priceIncrement"],
+    "properties": {
+        "url": {
+            "title": "URL of the page",
+            "type": "string",
+            "description": "The URL of website you want to get the data from.",
+            "editor": "textfield",
+            "prefill": "https://api.ecommerce.com/products",
+            "default": "https://api.ecommerce.com/products"
+        },
+        "priceIncrement": {
+            "title": "Products per request",
+            "type": "integer",
+            "description": "Number of products to be scraped each request.",
+            "prefill": 1000,
+            "default": 1000,
+            "minimum": 1,
+            "maximum": 1000
+        }
+    }
+}
